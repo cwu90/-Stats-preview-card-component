@@ -1,14 +1,99 @@
-* {
-  padding: 0;
-  margin: 0;
+:root {
+  --clr-first: hsl(31, 77%, 52%);
+  --clr-second: hsl(184, 100%, 22%);
+  --clr-third: hsl(179, 100%, 13%);
+  --para-text: hsla(0, 0%, 100%, 0.75);
+  --head-text: hsl(0, 0%, 95%);
+
+  --ff-primary: 'Lexend Deca', san-serif;
+  --ff-accent: 'Big Shoulders Display', cursive;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  color: white;
 }
 
 body {
-  background-color: white;
-  background-color: hsl(233, 47%, 7%);
-  font-size: 15px;
+  font-family: var(--ff-primary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  background-color: #f2f2f2;
+}
+
+body,
+h2,
+p {
+  margin: 0;
+}
+
+h2 {
+  font-family: var(--ff-accent);
+  font-weight: 900;
+  color: var(--head-text);
+  font-size: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+}
+
+p {
+  color: var(--para-text);
+  font-size: 1.2em;
+  padding-left: 3rem;
+  padding-right: 7rem;
+  padding-bottom: 0.8rem;
+  line-height: 1.4em;
+}
+
+.buttonbox {
+  padding-left: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+button {
+  padding: 0.6em 1.5em;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--ff-primary);
+  font-size: 1.2rem;
+  border: none;
+  border: 2px solid white;
+  border-width: medium;
+}
+
+.orange {
+  color: var(--clr-first);
+}
+
+.sedans button:hover {
+  background-color: var(--clr-first);
+  color: var(--head-text);
+}
+
+.green {
+  color: var(--clr-second);
+}
+
+.suvs button:hover {
+  background-color: var(--clr-second);
+  color: var(--head-text);
+}
+.darkgreen {
+  color: var(--clr-third);
+}
+
+.luxury button:hover {
+  background-color: var(--clr-third);
+  color: var(--head-text);
+}
+
+.icon {
+  padding: 2rem 2.5rem 1rem;
+  /* padding-top: 3rem;
+  padding-left: 2rem;
+  padding-bottom: 2.5rem; */
 }
 
 .container {
@@ -20,137 +105,51 @@ body {
   width: 100%;
 }
 
-.card {
-  display: flex;
+section {
+  width: 22em;
+  height: 34em;
 }
 
-.left-card {
-  background-color: rgb(27, 25, 56);
-  border-bottom-left-radius: 0.5em;
-  border-top-left-radius: 0.5em;
-  min-width: 550px;
-}
-
-h1 {
-  font-family: 'Lexend Deca', sans-serif;
-  margin: 2em 2em 1em 2em;
-  font-size: 2.3em;
-}
-
-.highlight {
-  color: hsl(277, 64%, 61%);
-}
-
-p {
-  color: hsla(0, 0%, 100%);
-  font-family: 'Inter', sans-serif;
-  margin-left: 4em;
-  line-height: 150%;
-}
-
-.states-container {
-  display: flex;
-  margin-right: 5em;
-  margin-top: 3em;
-  justify-content: space-evenly;
-}
-
-.right-card,
-img {
-  background-color: hsla(277, 64%, 61%);
+.luxury {
   border-bottom-right-radius: 0.5em;
   border-top-right-radius: 0.5em;
-  opacity: 0.6;
 }
 
-img {
-  height: 100%;
-  mix-blend-mode: hard-light;
+.sedans {
+  border-bottom-left-radius: 0.5em;
+  border-top-left-radius: 0.5em;
 }
 
-.image1 {
-  display: block;
+.sedans {
+  background-color: var(--clr-first);
 }
 
-.image2 {
-  display: none;
+.suvs {
+  background-color: var(--clr-second);
 }
 
-.attribution,
-a {
-  font-size: 1em;
-  text-align: center;
-  color: hsla(0, 0%, 100%, 0.6);
-  font-family: 'Inter', sans-serif;
-  padding-top: 1em;
+.luxury {
+  background-color: var(--clr-third);
 }
 
-.stats {
-  font-size: 1.5em;
-  font-weight: 700;
-  font-family: 'Lexend Deca', sans-serif;
-  margin-top: 1em;
-}
-
-.text {
-  font-size: 0.5em;
-  font-family: 'Inter', sans-serif;
-  color: hsla(0, 0%, 100%);
-  font-weight: lighter;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-@media only screen and (max-width: 768px) {
-  body {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
+@media only screen and (max-width: 1193px) {
   .container {
+    position: relative;
+    display: flex;
     flex-direction: column;
-    justify-content: none;
-    align-items: none;
-    width: 100%;
     height: 100%;
-    min-width: 555px;
+    padding-top: 5em;
   }
 
-  .card {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-  }
-
-  .left-card {
-    border-bottom-right-radius: 0.5em;
-    border-top-left-radius: 0em;
-  }
-
-  .right-card {
+  .sedans {
+    border-bottom-left-radius: 0em;
     border-top-left-radius: 0.5em;
-    border-bottom-right-radius: 0em;
+    border-top-right-radius: 0.5em;
   }
 
-  h1 {
-    text-align: center;
-  }
-
-  p {
-    margin-left: 0px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .states-container {
-    margin-bottom: 50px;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 90px;
-  }
-
-  .stats {
-    text-align: center;
+  .luxury {
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border-top-right-radius: 0em;
   }
 }
